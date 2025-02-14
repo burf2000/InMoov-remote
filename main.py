@@ -2,6 +2,7 @@
 import asyncio
 from gui import start_gui
 from websocket_handler import subscribe_to_channel
+from mrl_models import get_inmoov2_instance
 
 async def main():
     """ Main function to run both the Tkinter GUI and the WebSocket communication. """
@@ -26,4 +27,13 @@ async def main():
         await asyncio.sleep(0.01)  # Allow asyncio to run
 
 if __name__ == "__main__":
+
+    inmoov = get_inmoov2_instance()
+    if inmoov:
+        print(f"InMoov2 Service Name: {inmoov.name}")
+        print(f"Running Status: {inmoov.isRunning}")
+        print(f"Number of Peers: {len(inmoov.config.peers)}")
+        print("List of Gestures:", ", ".join(inmoov.get_gestures()))
+
+
     asyncio.run(main())

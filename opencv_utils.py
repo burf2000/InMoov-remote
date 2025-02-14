@@ -2,7 +2,7 @@
 import cv2
 import base64
 import numpy as np
-import MODEL, HANDS, MP_DRAWING, MP_FACE_MESH, FACE_MESH, MP_HANDS
+from config import MODEL, HANDS, MP_DRAWING, MP_FACE_MESH, FACE_MESH, MP_HANDS
 
 
 def decode_frame(frame_data):

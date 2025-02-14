@@ -20,4 +20,3 @@ FACE_MESH = MP_FACE_MESH.FaceMesh(min_detection_confidence=0.5, min_tracking_con
 
 # Global Variables
 websocket = None
-running = True
