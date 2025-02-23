@@ -95,7 +95,7 @@ def start_gui():
 
     buttons = [
         ("Say", "say"), ("Ask", "ask"), ("LLM", "llm"),
-        ("Start Recording", "start"), ("Stop Recording", "stop")
+        ("Start Recording", "start"), ("Stop Recording", "stop"),("Ask LLM", "askllm")
     ]
 
     for i, (label, action) in enumerate(buttons):

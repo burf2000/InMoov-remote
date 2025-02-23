@@ -47,18 +47,18 @@ def call_ollama(api_url="http://localhost:11434/api/generate", model="llama3",
     else:
         return f"Error: {response.status_code}, {response.text}"
 
-# Example usage
-history = [
-    {"role": "user", "content": "Hello, who are you?"},
-    {"role": "assistant", "content": "I am an AI assistant created to help you!"}
-]
+# # Example usage
+# history = [
+#     {"role": "user", "content": "Hello, who are you?"},
+#     {"role": "assistant", "content": "I am an AI assistant created to help you!"}
+# ]
 
-response = call_ollama(
-    model="llama3.2",
-    system_prompt="You are a friendly AI assistant.",
-    history=history,
-    user_prompt="How are you today",
-    image_path="example.jpg"  # Change to a valid image file
-)
+# response = call_ollama(
+#     model="llama3.2",
+#     system_prompt="You are a friendly AI assistant.",
+#     history=history,
+#     user_prompt="How are you today",
+#     image_path="example.jpg"  # Change to a valid image file
+# )
 
-print(response)
+# print(response)

@@ -7,6 +7,8 @@ from ultralytics import YOLO
 import mediapipe as mp
 from opencv_utils import decode_frame, run_yolo, run_mediapipe_face_detection, run_mediapipe_hand_tracking
 from config import URI
+from ollama import call_ollama
+
 
 websocket = None
 # Hack to skip every other frame
@@ -134,6 +136,25 @@ async def publish_message(message_type, user_text):
                 "name": "i01.ear",
                 "method": "stopRecording"
             })
+        elif message_type == "askllm":
+
+            # Example usage
+            history = [
+                {"role": "user", "content": "Hello, who are you?"},
+                {"role": "assistant", "content": "I am an AI assistant created to help you!"}
+            ]
+
+            response = call_ollama(
+                model="llama3.2",
+                system_prompt="You are a friendly AI assistant.",
+                history=history,
+                user_prompt=user_text
+                 # Change to a valid image file
+            )
+
+            print(response)
+            return
+
         else:
             print("Invalid message type!")
             return
